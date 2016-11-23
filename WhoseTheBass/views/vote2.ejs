@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/bootstrap.css' />
+    <link rel='stylesheet' href='/css/theme.css' />
+  </head>
+  <body style="height: 1000px">
+  	
+	<div id="main-nav">
+      <div  class="col-md-12 clearfix main-nav-class">
+
+        <div class="pull-right">
+          <ul class="nav nav-pills">
+            <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+            <!-- <li><a href="">About Us</a></li> -->
+          </ul>
+        </div>
+        <div class="pull-left">
+          <ul class="nav nav-pills">
+            <li><a href="finish" class="btn btn-danger ">Quit</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="main-container">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-md-1"></div>
+          <div class="col-md-10 main-col" >
+          		<form name="input" action="" method="get1">
+					
+				
+          		<div class="picture-container">
+          			<image src="<%= picture.pic %>" class="img-responsive picture"></image>
+          			<button class="btn btn-warning my-btn"> Skip to next Picture </button>
+          			<% if (picture.votedUsers.length > 0) { %>
+          			<p class="question-p">
+          				<b>Your friends also voted.</b>
+          			</p>
+          			<% } %>
+          		</div>
+          		<hr/>
+		        <div class="posts">
+		        	<% questions.forEach(function(q, qindex){ %>
+			        <div class="panel panel-warning">
+				        <div class="panel-heading"> <%= qindex +1 %>. <%= q.target %>!</div>
+				        <div class="panel-body">
+				        <input type="hidden" value="o" name="V_<%= q.qid%>" id="<%= q.qid%>">
+				        <p class="question-p">
+				        	Imagine you and your friends have been invited to go to <b><%= q.target %></b>!
+				        	<br/>
+				        	<% if (q.fy.length > 0) { %>
+					        	<% q.fy.forEach(function(d,index){ %>
+					        		<% if (index == q.fy.length-1 && index != 0) { %>
+					        		<b><%=d.name%></b>
+						        	<% } else { %>
+						        		<b><%=d.name%></b>,
+						        	<%}%>
+					        	<% }) %>
+					        	<% if (q.fy.length > 1) { %>
+					        		are
+					        	<% } else { %>
+					        		is
+					        	<% } %>
+					        	<b style="color:red"> going. </b>
+					        <% }%>
+				        	<br>
+				        	<% if (q.fn.length > 0) { %>
+					        	<% q.fn.forEach(function(d, index){ %>
+					        		<% if (index == q.fn.length-1) { %>
+					        		 <b><%=d.name%></b>
+						        	<% } else { %>
+						        		<b><%=d.name%></b>,
+						        	<%}%>
+					        	<% }) %>
+					        	<% if (q.fn.length > 1) { %>
+					        		are 
+					        	<% } else { %>
+					        		is
+					        	<% } %>
+					        	<b style="color:red">  not </b> going.
+					        <% }%>
+				        	<h3><b> WOULD YOU GO? </b></h3>
+				        </p>
+				        <button type="button" class="btn-success btn-lg question-btn" id="<%= q.qid%>y" onclick="changeState('<%= q.qid%>y')"><span class="glyphicon glyphicon-ok"></span> </button>
+				        <button type="button" class="btn-danger btn-lg question-btn" id="<%= q.qid%>n" onclick="changeState('<%= q.qid%>n')"> <span class="glyphicon glyphicon-remove"></span> </button>
+				        </div>
+				        <!-- <div class="panel-footer alert-info"> Footer </div> -->
+			        </div>
+			        <% }) %>
+			        <div class="panel panel-warning">
+			        	<input type="hidden" name="id" value="<%= picture.picID %>" />
+			    		<input type="submit" class="btn btn-primary my-btn" value="Submit and go next">
+			    		<a href="finish" class="btn btn-danger my-btn">Quit</a>
+			        </div>
+			        
+		      	</div>
+		      	
+		      	</form>
+          </div>
+          <div class="col-md-1"></div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <footer></footer>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/theme.js"></script>
+  </body>
+</html>

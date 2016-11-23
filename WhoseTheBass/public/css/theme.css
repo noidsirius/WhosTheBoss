@@ -1,0 +1,95 @@
+@font-face {
+	font-family: 'BYekan';
+	src: url('../fonts/BYekan.eot');
+	src: url('../fonts/BYekan.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/BYekan.woff') format('woff'),
+		 url('../fonts/BYekan.ttf') format('truetype'),
+		 url('../fonts/BYekan.svg#BYekan') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+
+body
+{
+	background-color: rgba(86,61,124,0.15);
+
+}
+
+
+
+.main-nav-class
+{
+	background-color: rgba(40,50,165,0.8);
+}
+
+a
+{
+	color : #ADD;
+}
+
+.picture-container
+{
+	background-color: rgba(86,61,124,0.55);
+}
+.picture
+{
+	width: 65%;
+	margin-left : auto;
+	margin-right : auto;
+	padding : 15px;
+	padding-left: 30px;
+	padding-right: 30px;
+	
+	
+	
+}
+.posts
+{
+	width: 90%;
+	margin-left : auto;
+	margin-right : auto;
+	
+}
+
+.main-col
+{
+	background-color: rgba(86,61,124,0.35);
+}
+
+.my-btn
+{
+	margin : 10px;	
+}
+
+.question-btn
+{
+	margin-left : auto;
+	margin-right : auto;
+	width : 80px;
+
+}
+
+.question-p
+{
+	font-size: 20px;
+
+}
+
+
+.showgrid
+{
+	margin-bottom: 15px;
+}
+
+.show-grid [class^="col-"] {
+	padding-top: 10px;
+	padding-bottom:10px;
+	background-color: #eee;
+	border: 1px solid #ddd;
+	background-color: rgba(86,61,124,0.15);
+	border: 1px solid rgba(86,61,124,0.2);
+}
+body{
+
+	
+}

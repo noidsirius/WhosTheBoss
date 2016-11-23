@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title%></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <img src="<%= picture.pic %>"/>
+    <form action="vote" method="get">
+    	<h1>Friends: </h1>
+    	<p>
+    	<% picture.tags.forEach(function(d){ %>
+    		<%= d.name %> 
+    		<hr/>
+    	<% }) %>
+    	</p>
+    	<input type="hidden" name="id" value="<%= picture.picID %>" />
+    	<input type="submit"/>
+    </form>
+  </body>
+</html>

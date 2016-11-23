@@ -1,0 +1,9 @@
+#!/bin/bash
+NOW=$(date +"%M-%H-%m-%d-%Y")
+PIC="/root/Dumps/pictures.$NOW.json"
+VOTE="/root/Dumps/votes.$NOW.json"
+USER="/root/Dumps/users.$NOW.json"
+mongoexport --db WTBass --collection pictures  --out $PIC
+mongoexport --db WTBass --collection votes  --out $VOTE
+mongoexport --db WTBass --collection users  --out $USER
+

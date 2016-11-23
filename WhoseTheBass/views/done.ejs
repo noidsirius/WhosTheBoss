@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/bootstrap.css' />
+    <link rel='stylesheet' href='/css/theme.css' />
+  </head>
+  <body>
+  <div id="main-nav">
+      <div  class="col-md-12 clearfix main-nav-class">
+
+        <div class="pull-right">
+          <ul class="nav nav-pills">
+            <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+            <!-- <li><a href="">About Us</a></li> -->
+          </ul>
+        </div>
+        <div class="pull-left">
+          <ul class="nav nav-pills">
+            <li><a href="finish" class="btn btn-danger ">Quit</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+	<div class="col-md-8 main-col" >
+		<h1><%= title %></h1>
+	    <p style="font-size:18px"><%= body %></p>
+    <a href="start" class="btn btn-success btn-lg my-btn">Restart</a>
+    </div>
+    <div class="col-md-2"></div>
+  </body>
+</html>
